@@ -7,9 +7,9 @@ public class Quest
     public string nombreQuest;
     public enum QUEST_STATE
     {
-        UNNASIGNED,
-        ASSIGNED,            
-        COMPLETE
+        UNNASIGNED =0,
+        ASSIGNED = 1,            
+        COMPLETE = 2
     }
     public QUEST_STATE questState;
 }
