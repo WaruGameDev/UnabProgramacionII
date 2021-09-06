@@ -10,7 +10,7 @@ public class Quest
         UNNASIGNED =0,
         ASSIGNED = 1,            
         COMPLETE = 2
-    }
+    }    
     public QUEST_STATE questState;
 }
 
@@ -19,10 +19,21 @@ public class QuestManager : MonoBehaviour
 {
     public static QuestManager instance;
     public List<Quest> quests;
+    public Transform panelMisiones;
+    public GameObject panelMisionesInfo;
 
     private void Awake()
     {
         instance = this;
+    }
+    private void Start()
+    {
+        foreach(Quest q in quests)
+        {
+            GameObject questInfo = Instantiate(panelMisionesInfo, panelMisiones);
+            questInfo.GetComponent<PanelStatus>().questInfo.nombreQuest = q.nombreQuest;
+            questInfo.GetComponent<PanelStatus>().questInfo.questState = q.questState;
+        }
     }
     // saber en que estado esta una quest especifica.
     public Quest.QUEST_STATE GetQuestState(string nameQuest)

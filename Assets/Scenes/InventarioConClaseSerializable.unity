@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657815, g: 0.49641192, b: 0.57481617, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item:
-    nameItem: 
+    nameItem: Tronco
     type_Item: 0
   value: 1
 --- !u!65 &486558309
@@ -265,6 +265,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: []
+  tempItem:
+    item:
+      nameItem: Tronco
+      type_Item: 0
+    count: 1
 --- !u!4 &519910465
 Transform:
   m_ObjectHideFlags: 0
@@ -312,8 +317,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item:
-    nameItem: 
-    type_Item: 0
+    nameItem: Calcetin
+    type_Item: 2
   value: 1
 --- !u!65 &860967098
 BoxCollider:
@@ -424,7 +429,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item:
-    nameItem: 
+    nameItem: Tronco
     type_Item: 0
   value: 1
 --- !u!65 &1111400664
@@ -536,7 +541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item:
-    nameItem: 
+    nameItem: Tronco
     type_Item: 0
   value: 1
 --- !u!65 &1498345606
@@ -824,8 +829,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item:
-    nameItem: 
-    type_Item: 0
+    nameItem: Calcetin
+    type_Item: 2
   value: 1
 --- !u!65 &1842792378
 BoxCollider:
@@ -936,7 +941,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item:
-    nameItem: 
+    nameItem: Tronco
     type_Item: 0
   value: 1
 --- !u!65 &1978387782

@@ -31,10 +31,16 @@ public class InventoryManager : MonoBehaviour
 
     public List<ItemInventory> inventory;
 
+    public ItemInventory tempItem;
+
 
     public void Awake()
     {
         instance = this;
+    }
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void AddItem(Item item, int value)
@@ -65,6 +71,47 @@ public class InventoryManager : MonoBehaviour
             inventory.Add(itemTemp);
         }
         
+    }
+    public void DropItem(Item item, int value)
+    {
+        if(inventory.Count > 0)
+        {
+            foreach (ItemInventory i in inventory)
+            {
+                if (i.item.nameItem == item.nameItem)
+                {
+                    // si el valor es mayor a la cantidad... entonces no dropiar o dropiar lo que tiene.
+                    if(i.count >= value)
+                    {
+                        i.count -= value;
+                        if (i.count <= 0)
+                        {
+                            inventory.Remove(i);
+                        }
+                    }
+                    else
+                    {
+                        // no tienes suficiente objetos.
+                    }
+                    
+                    return;
+                }
+
+
+            }
+            
+        }
+        else
+        {
+            //no tengo item para dropear
+        }
+    }
+    private void Update()
+    {
+        if (Input.GetButtonDown("Jump"))
+        {
+            DropItem(tempItem.item, tempItem.count);
+        }
     }
 
 }
