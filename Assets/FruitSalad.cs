@@ -15,6 +15,7 @@ public class FruitSalad : MonoBehaviour
 
         myApple.SayHello(myApple.nombreColor);
         myApple.Chop();
+        
 
         myFruit = new Fruit("Yellow");
         myApple = new Apple("Green");
