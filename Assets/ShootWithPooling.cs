@@ -33,6 +33,7 @@ public class ShootWithPooling : MonoBehaviour
     {
         foreach(Transform canon in canones)
         {
+            Vector3 localForward = airwing.worldToLocalMatrix.MultiplyVector(airwing.forward);
             bulletPool[0].GetComponent<Bullet>().OnShoot(airwing.forward);        
             bulletPool.Insert(bulletPool.Count - 1, bulletPool[0]);      
             bulletPool[0].transform.position = canon.position;

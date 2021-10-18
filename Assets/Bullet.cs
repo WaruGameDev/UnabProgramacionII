@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
     public float speed = 100;
     public float timeToDissapear = 5;
     public Vector3 direction = new Vector3(0,0,1);
+    public float damage = 1;
 
     private void Update()
     {
@@ -24,5 +25,13 @@ public class Bullet : MonoBehaviour
         yield return new WaitForSeconds(timeToDissapear);
         transform.gameObject.SetActive(false);
         yield break;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Enemy"))
+        {
+            other.GetComponent<Health>().TakeDamage(damage);
+            gameObject.SetActive(false);
+        }
     }
 }
